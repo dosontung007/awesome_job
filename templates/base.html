@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/bulma.css">
+    <script src="https://use.fontawesome.com/f2387c31c7.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Awesome Job</title>
+    <style>
+      h2 {
+        color: black;
+        font-size: 1.5em;
+        margin: .75em 0;
+      }
+      h3 {
+        color: black;
+        font-size: 1.17em;
+        margin: .83em 0;
+      }
+      ul {
+        list-style-type: square;
+      }
+    </style>
+  </head>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://pymi.vn">
+        <h1 class="title is-3 has-text-black-bis">Awesome Job</h1>
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+  {% block body %}
+  {% endblock %}
+</html>

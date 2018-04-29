@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+<body>
+  <div class="hero-body">
+    <h4 class="title is-4">All Jobs</h4>
+    {% for (id, title) in id_n_title %}
+        <div class="box">
+          <a href="/{{id}}" class='has-text-link'>"{{title}}"</a>
+        </div>
+    {% endfor %}
+  </div>
+</body>
+
+{% endblock %}
