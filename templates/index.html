@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 <body>
+  <section class="section">
   <div class="hero-body">
     <h4 class="title is-4">All Jobs</h4>
     {% for (id, title) in id_n_title %}
@@ -8,6 +9,17 @@
           <a href="/{{id}}" class='has-text-link'>"{{title}}"</a>
         </div>
     {% endfor %}
+  </div>
+  </section>
+  <div class="container has-text-centered">
+      <div class="columns">
+          <div class="column is-6">
+              <a class="button is-info is-hovered" {% if page == 1 %} href="" disabled {% else %} href="/page/{{page - 1}}" {% endif %}>Previous Page</a>
+          </div>
+          <div class="column is-6">
+            <a class="button is-info is-hovered" {% if page==max_page %} href="" disabled {% else %} href="/page/{{page + 1}}"{% endif %}>Next Page</a>
+          </div>
+      </div>
   </div>
 </body>
 

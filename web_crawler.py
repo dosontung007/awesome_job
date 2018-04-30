@@ -30,8 +30,7 @@ def add_job(lst_jobs):
         c = conn.cursor()
         c.execute('drop table if exists jobs')
         c.execute('CREATE TABLE jobs (id, title, description);')
-        for job in lst_jobs:
-            c.execute('INSERT INTO jobs VALUES (?,?,?)', job)
+    	c.executemany('INSERT INTO jobs VALUES (?,?,?)', lst_jobs)
         conn.commit()
 
 
