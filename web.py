@@ -76,7 +76,7 @@ def get_jobs_for_page(page, PER_PAGE, count):
 @app.route('/page', defaults={'page': 1})
 @app.route('/page/<int:page>')
 def show_jobs(page):
-    count = count_jobs()
+    count = count_jobs( )
     id_n_title = get_jobs_for_page(page, PER_PAGE, count)
     if not id_n_title:
         abort(404)
@@ -90,6 +90,8 @@ def render_job(id_):
         title, description = query_db(query, (id_,), True)
     except ValueError:
         title, description = ('', '')
+    except ValueError:
+        pass
     return render_template('job.html', title=title, description=description)
 
 

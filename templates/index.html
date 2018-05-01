@@ -14,10 +14,10 @@
   <div class="container has-text-centered">
       <div class="columns">
           <div class="column is-6">
-              <a class="button is-info is-hovered" {% if page == 1 %} href="" disabled {% else %} href="/page/{{page - 1}}" {% endif %}>Previous Page</a>
+              <a class="button is-info is-hovered" {% if page == 1 %} disabled {% else %} href="/page/{{page - 1}}" {% endif %}>Previous Page</a>
           </div>
           <div class="column is-6">
-            <a class="button is-info is-hovered" {% if page==max_page %} href="" disabled {% else %} href="/page/{{page + 1}}"{% endif %}>Next Page</a>
+            <a class="button is-info is-hovered" {% if page==max_page %} disabled {% else %} href="/page/{{page + 1}}"{% endif %}>Next Page</a>
           </div>
       </div>
   </div>
