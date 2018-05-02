@@ -76,11 +76,14 @@ def get_jobs_for_page(page, PER_PAGE, count):
 @app.route('/page', defaults={'page': 1})
 @app.route('/page/<int:page>')
 def show_jobs(page):
-    count = count_jobs( )
+    count = count_jobs()
+    max_page = count // PER_PAGE + 1
+    if page > max_page:
+        return 'Hello anh Long'
     id_n_title = get_jobs_for_page(page, PER_PAGE, count)
     if not id_n_title:
         abort(404)
-    return render_template('index.html', id_n_title=id_n_title, page=page, max_page= count // PER_PAGE + 1)
+    return render_template('index.html', id_n_title=id_n_title, page=page, max_page=max_page)
 
 
 @app.route('/<id_>')
@@ -98,4 +101,4 @@ def render_job(id_):
 if __name__ == '__main__':
     with app.app_context():
         count = count_jobs()
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")
